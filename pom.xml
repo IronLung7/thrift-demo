@@ -10,22 +10,40 @@
 
 
     <dependencies>
+        <!-- common library dependencies -->
         <dependency>
             <groupId>org.apache.thrift</groupId>
             <artifactId>libthrift</artifactId>
-            <version>0.8.0</version>
+            <version>0.6.1</version>
         </dependency>
+
         <dependency>
             <groupId>com.twitter</groupId>
-            <artifactId>scrooge-core_2.9.2</artifactId>
-            <version>3.4.0</version>
+            <artifactId>finagle-thrift_2.10</artifactId>
+            <version>6.20.0</version>
         </dependency>
-        <!-- needed if the "finagle" flag is provided -->
+
         <dependency>
             <groupId>com.twitter</groupId>
-            <artifactId>finagle-thrift_2.9.2</artifactId>
-            <version>6.5.1</version>
+            <artifactId>scrooge-core_2.10</artifactId>
+            <version>3.16.3</version>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.apache.thrift</groupId>-->
+            <!--<artifactId>libthrift</artifactId>-->
+            <!--<version>0.9.0</version>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>com.twitter</groupId>-->
+            <!--<artifactId>scrooge-core_2.10</artifactId>-->
+            <!--<version>3.16.3</version>-->
+        <!--</dependency>-->
+        <!--&lt;!&ndash; needed if the "-finagle" flag is provided &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>com.twitter</groupId>-->
+            <!--<artifactId>finagle-thrift_2.10</artifactId>-->
+            <!--<version>6.20.0</version>-->
+        <!--</dependency>-->
     </dependencies>
 
 
@@ -36,13 +54,13 @@
                 <artifactId>scrooge-maven-plugin</artifactId>
                 <version>3.14.1</version>
                 <configuration>
-                    <thriftNamespaceMappings>
-                        <thriftNamespaceMapping>
-                            <from>shared</from>
-                            <to>shared</to>
-                        </thriftNamespaceMapping>
-                    </thriftNamespaceMappings>
-                    <language>scala</language> <!-- default is scala -->
+                    <!--<thriftNamespaceMappings>-->
+                        <!--<thriftNamespaceMapping>-->
+                            <!--<from>com.demo</from>-->
+                            <!--<to>com.demo.thrift</to>-->
+                        <!--</thriftNamespaceMapping>-->
+                    <!--</thriftNamespaceMappings>-->
+                    <language>java</language> <!-- default is scala -->
                     <thriftOpts>
                         <!-- add other Scrooge command line options using thriftOpts -->
                         <thriftOpt>--finagle</thriftOpt>
